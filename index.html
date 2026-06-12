@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jornada do Alimento — Tomate | Agro forte, futuro sustentável</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">🍅</div>
+        <div>
+          <h1>Jornada do Alimento</h1>
+          <p class="tag">Agro forte, futuro sustentável — equilíbrio entre produção e consumo</p>
+        </div>
+      </div>
+      <nav class="nav-top" aria-label="navegação">
+        <button id="startBtn" class="btn small">Iniciar Jornada</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="intro" class="stage active" aria-labelledby="intro-title">
+      <h2 id="intro-title">Bem-vindo à Jornada do Alimento</h2>
+      <p>Conheça o caminho do alimento desde o campo até o seu prato. Escolha um alimento para começar (padrão: Tomate).</p>
+
+      <div class="choice">
+        <label for="foodSelect">Escolha o alimento</label>
+        <select id="foodSelect">
+          <option value="Tomate">Tomate</option>
+          <option value="Milho">Milho</option>
+          <option value="Feijão">Feijão</option>
+        </select>
+      </div>
+
+      <p class="lead">Acompanhe as etapas e descubra curiosidades sobre produção sustentável e consumo consciente.</p>
+
+      <div class="controls">
+        <button id="nextBtn" class="btn primary">Avançar na Jornada</button>
+      </div>
+    </section>
+
+    <section id="stage-1" class="stage" aria-labelledby="stage1-title">
+      <h2 id="stage1-title">Etapa 1 — O Campo</h2>
+      <div class="stage-grid">
+        <div class="text">
+          <p>Práticas sustentáveis e tecnologias de precisão ajudam a produzir sem esgotar o solo: rotação de culturas, manejo integrado e uso eficiente da água.</p>
+          <ul>
+            <li>Agro forte: técnicas que preservam a terra.</li>
+            <li>Monitoramento: sensores e dados para tomar decisões.</li>
+          </ul>
+        </div>
+        <div class="visual">🌾</div>
+      </div>
+      <div class="controls">
+        <button class="btn secondary" data-action="back">Voltar</button>
+        <button class="btn primary" data-action="next">Avançar</button>
+        <button class="btn ghost curiosity" data-curiosity="campo">Curiosidade</button>
+      </div>
+    </section>
+
+    <section id="stage-2" class="stage" aria-labelledby="stage2-title">
+      <h2 id="stage2-title">Etapa 2 — Transporte & Distribuição</h2>
+      <div class="stage-grid">
+        <div class="text">
+          <p>Logística eficiente reduz perdas: embalagens adequadas, rotas otimizadas e armazenamento em condições ideais diminuem desperdício.</p>
+          <ul>
+            <li>Transporte otimizado: menos CO₂ e menos perdas.</li>
+            <li>Redução de etapas: apoio a cadeias curtas entre produtor e consumidor.</li>
+          </ul>
+        </div>
+        <div class="visual">🚚</div>
+      </div>
+      <div class="controls">
+        <button class="btn secondary" data-action="back">Voltar</button>
+        <button class="btn primary" data-action="next">Avançar</button>
+        <button class="btn ghost curiosity" data-curiosity="transporte">Curiosidade</button>
+      </div>
+    </section>
+
+    <section id="stage-3" class="stage" aria-labelledby="stage3-title">
+      <h2 id="stage3-title">Etapa 3 — O Prato & o Consumidor</h2>
+      <div class="stage-grid">
+        <div class="text">
+          <p>O consumo consciente e o combate ao desperdício são essenciais. Planejar refeições e aproveitar sobras fortalece o equilíbrio entre produção e consumo.</p>
+          <ul>
+            <li>Consumo consciente: escolher local e sazonal.</li>
+            <li>Combate ao desperdício: receitas com sobras e armazenamento correto.</li>
+          </ul>
+        </div>
+        <div class="visual">🍽️</div>
+      </div>
+      <div class="controls">
+        <button class="btn secondary" data-action="back">Voltar</button>
+        <button class="btn primary" data-action="finish">Concluir Jornada</button>
+        <button class="btn ghost curiosity" data-curiosity="consumo">Curiosidade</button>
+      </div>
+    </section>
+
+    <section id="conclusion" class="stage" aria-labelledby="conclusion-title">
+      <h2 id="conclusion-title">Conclusão</h2>
+      <p class="lead">Parabéns! Você percorreu a jornada. Lembre-se: apoiar práticas sustentáveis no campo e adotar consumo consciente ajudam a garantir um futuro equilibrado.</p>
+      <div class="controls">
+        <button id="restartBtn" class="btn">Reiniciar</button>
+        <button id="shareBtn" class="btn primary">Compartilhar Dica</button>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="popup" class="popup" role="dialog" aria-hidden="true">
+    <div class="popup-content">
+      <button id="closePopup" class="close">✕</button>
+      <h4 id="popup-title">Curiosidade</h4>
+      <p id="popup-text">Aqui vai um fato interessante.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Projeto Agrinho 2026</h4>
+          <p>Tema: "Agro forte, futuro sustentável — equilíbrio entre produção e consumo"</p>
+        </div>
+        <div class="footer-section">
+          <h4>Sobre</h4>
+          <ul>
+            <li>Educação para a sustentabilidade</li>
+            <li>Conscientização do consumo</li>
+            <li>Valorização do agronegócio responsável</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contato & Redes</h4>
+          <p>Compartilhe suas dicas de sustentabilidade com #AgroForte</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Jornada do Alimento. Desenvolvido com 🌱 para um futuro mais verde.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

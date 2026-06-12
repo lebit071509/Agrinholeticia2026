@@ -1,0 +1,89 @@
+/* Palette: natureza + tecnologia */
+:root{
+  --bg:#f6fbf7;
+  --green-800:#11492f;
+  --green-600:#2f855a;
+  --green-400:#6fcf97;
+  --earth:#8b5e3c;
+  --accent:#f6a623; /* laranja/detalhe */
+  --muted:#6b7280;
+  --card:#ffffff;
+  --glass: rgba(255,255,255,0.6);
+  --shadow: 0 10px 30px rgba(20,30,20,0.08);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg), #eef7ef);
+  color:#07201a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  font-size:16px;
+}
+
+.container{max-width:1100px;margin:0 auto;padding:24px}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:30;background:linear-gradient(90deg, rgba(47,133,90,0.06), rgba(139,94,60,0.03));backdrop-filter:blur(6px);border-bottom:1px solid rgba(7,32,26,0.04)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .logo{width:56px;height:56px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--green-600),var(--green-800));color:white;font-size:22px;box-shadow:var(--shadow)}
+.brand h1{margin:0;font-size:18px;font-weight:700}
+.brand .tag{margin:0;color:var(--muted);font-size:13px}
+
+.nav-top .btn.small{padding:8px 10px;border-radius:8px;font-weight:600}
+
+/* Stages layout */
+.stage{display:none;padding:28px;margin-top:18px;background:var(--card);border-radius:12px;box-shadow:var(--shadow);transition:transform .45s cubic-bezier(.2,.9,.2,1),opacity .35s}
+.stage.active{display:block;transform:translateY(0);opacity:1}
+.stage.enter-left{transform:translateX(-18px);opacity:0}
+.stage.enter-right{transform:translateX(18px);opacity:0}
+
+h2{color:var(--green-800);margin:0 0 12px}
+.lead{color:var(--muted);margin:12px 0}
+.choice{display:flex;gap:12px;align-items:center;margin:12px 0}
+.choice label{font-weight:600;color:#07382e}
+.choice select{padding:10px;border-radius:10px;border:1px solid rgba(10,20,15,0.06)}
+
+.stage-grid{display:flex;align-items:center;gap:20px}
+.stage-grid .text{flex:1}
+.stage-grid .visual{width:140px;height:120px;border-radius:12px;background:linear-gradient(180deg,#fff,#f6fff6);display:flex;align-items:center;justify-content:center;font-size:40px;border:1px solid rgba(10,20,15,0.04)}
+
+.controls{margin-top:18px;display:flex;gap:12px}
+.btn{padding:10px 14px;border-radius:10px;border:1px solid rgba(7,32,26,0.06);background:transparent;cursor:pointer;font-weight:700}
+.btn.primary{background:linear-gradient(90deg,var(--green-600),var(--green-800));color:white;border:none;box-shadow:0 8px 24px rgba(47,133,90,0.14)}
+.btn.secondary{background:#f3f6f3;border:none;color:var(--green-800)}
+.btn.ghost{background:transparent;border:1px dashed rgba(7,32,26,0.06)}
+
+/* Popup */
+.popup{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(3,7,5,0.35);opacity:0;pointer-events:none;transition:opacity .18s}
+.popup[aria-hidden="false"]{opacity:1;pointer-events:auto}
+.popup-content{background:var(--card);padding:18px;border-radius:12px;max-width:520px;box-shadow:var(--shadow);position:relative}
+.popup .close{position:absolute;right:10px;top:8px;border:none;background:transparent;font-size:18px;cursor:pointer}
+
+/* Conclusion */
+#conclusion .lead{font-weight:600}
+
+/* Responsive */
+@media (max-width:900px){
+  .stage-grid{flex-direction:column}
+  .stage-grid .visual{width:100%;height:150px}
+  .container{padding:16px}
+}
+
+/* Footer */
+.site-footer{margin-top:48px;background:linear-gradient(90deg, rgba(47,133,90,0.04), rgba(139,94,60,0.02));border-top:1px solid rgba(7,32,26,0.04)}
+.footer-inner{display:flex;flex-direction:column;gap:24px}
+.footer-content{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;padding:20px 0}
+.footer-section h4{margin:0 0 8px;color:var(--green-800);font-size:15px;font-weight:700}
+.footer-section p, .footer-section ul{margin:0;color:var(--muted);font-size:13px}
+.footer-section ul{list-style:none;padding:0}
+.footer-section li{padding:4px 0}
+.footer-bottom{text-align:center;padding:18px 0;border-top:1px solid rgba(7,32,26,0.04);color:var(--muted);font-size:13px}
+
+/* small helper */
+.muted{color:var(--muted)}
